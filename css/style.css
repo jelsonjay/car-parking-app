@@ -48,4 +48,8 @@ h1.title {
     margin-bottom: 30px;
 }
 
+.btn {
+    border-radius: 5px;
+}
+
 /*---END GLOBAL---*/

@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 //let form = document.querySelector('#')
 //let carMark document.querySelector('#')
@@ -21,10 +21,12 @@ function checkCar(event) {
 		hora: time.getHours(),
 		minuts: time.getMinutes()
 	};
-	//console.log(car);
+
+	// get to local storage
 	if (localStorage.getItem('data') === null) {
 		let cars = [];
 		cars.push(car);
+		// set to local storage
 		localStorage.setItem('data', JSON.stringify(cars));
 	} else {
 		let cars = JSON.parse(localStorage.getItem('data'));
@@ -36,6 +38,7 @@ function checkCar(event) {
 	event.preventDefault();
 }
 
+// show on
 function showData() {
 	let cars = JSON.parse(localStorage.getItem('data'));
 	let carResults = document.querySelector('#results');
