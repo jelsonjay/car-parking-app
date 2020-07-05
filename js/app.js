@@ -1,4 +1,4 @@
-//"use strict";
+'use strict';
 
 //let form = document.querySelector('#')
 //let carMark document.querySelector('#')
