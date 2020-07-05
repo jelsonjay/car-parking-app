@@ -22,14 +22,14 @@ function checkCar(event) {
 		minuts: time.getMinutes()
 	};
 	//console.log(car);
-	if (localStorage.getItem('dados') === null) {
+	if (localStorage.getItem('data') === null) {
 		let cars = [];
 		cars.push(car);
-		localStorage.setItem('dados', JSON.stringify(cars));
+		localStorage.setItem('data', JSON.stringify(cars));
 	} else {
-		let cars = JSON.parse(localStorage.getItem('dados'));
+		let cars = JSON.parse(localStorage.getItem('data'));
 		cars.push(car);
-		localStorage.setItem('dados', JSON.stringify(cars));
+		localStorage.setItem('data', JSON.stringify(cars));
 	}
 	document.querySelector('#form').reset();
 	showData();
@@ -37,7 +37,7 @@ function checkCar(event) {
 }
 
 function showData() {
-	let cars = JSON.parse(localStorage.getItem('dados'));
+	let cars = JSON.parse(localStorage.getItem('data'));
 	let carResults = document.querySelector('#results');
 
 	carResults.innerHTML = '';
@@ -65,12 +65,12 @@ function showData() {
 
 //Remove car
 function removeCar(RegNumber) {
-	let cars = JSON.parse(localStorage.getItem('dados'));
+	let cars = JSON.parse(localStorage.getItem('data'));
 	for (let i = 0; i < cars.length; i++) {
 		if (cars[i].RegNumber == RegNumber) {
 			cars.splice(i, 1);
 		}
-		localStorage.setItem('dados', JSON.stringify(cars));
+		localStorage.setItem('data', JSON.stringify(cars));
 	}
 	showData();
 }
